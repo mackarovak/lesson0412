@@ -22,16 +22,47 @@ namespace homework
         {
             if (i == 0) return $"{r}";
             else if (i > 0) return $"{ r} +{ i}i";
-            else if (i < 0) return $"{r}- {i}i";
-            else return $"{i}i"; 
+            else return $"{r}- {i}i";
         }
         public override int GetHashCode()
         {
             return base.GetHashCode();
         }
+        public static bool operator ==(ComplexNumbers complexNumbers1, ComplexNumbers complexNumbers2)
+        {
+            return complexNumbers1.r==complexNumbers2.r && complexNumbers2.i==complexNumbers1.i;
+        }
+        public static bool operator !=(ComplexNumbers complexNumbers1, ComplexNumbers complexNumbers2)
+        {
+            return !(complexNumbers1.r == complexNumbers2.r && complexNumbers2.i == complexNumbers1.i);
+        }
         public static ComplexNumbers operator+(ComplexNumbers complexNumbers1,ComplexNumbers complexNumbers2)
         {
             return new ComplexNumbers(complexNumbers1.r + complexNumbers2.r, complexNumbers2.i + complexNumbers1.i);
+        }
+        public static ComplexNumbers operator -(ComplexNumbers complexNumbers1, ComplexNumbers complexNumbers2)
+        {
+            return new ComplexNumbers(complexNumbers1.r - complexNumbers2.r, complexNumbers1.i - complexNumbers2.i);
+        }
+        public static ComplexNumbers operator *(ComplexNumbers complexNumbers1, ComplexNumbers complexNumbers2)
+        {
+            return new ComplexNumbers(complexNumbers1.r*complexNumbers2.r - complexNumbers1.i*complexNumbers2.i, complexNumbers1.r*complexNumbers2.i + complexNumbers2.r*complexNumbers1.i);
+        }
+        public override bool Equals(object obj)
+        {
+            double number;
+            if (obj is ComplexNumbers)
+            {
+                return r == (obj as ComplexNumbers).r && i == (obj as ComplexNumbers).i;
+            }
+            else if (i == 0 && double.TryParse(obj.ToString(), out number))
+            {
+                return r == number;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

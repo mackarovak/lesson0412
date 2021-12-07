@@ -39,7 +39,7 @@ namespace lesson0412
         }
         public static bool operator !=(RationalNumbers rationalNumbers1, RationalNumbers rationalNumbers2)
         {
-            return rationalNumbers1.Numerator == rationalNumbers2.Numerator && rationalNumbers1.Denominator == rationalNumbers2.Denominator;
+            return !(rationalNumbers1.Numerator == rationalNumbers2.Numerator && rationalNumbers1.Denominator == rationalNumbers2.Denominator);
         }
         public override bool Equals(object obj)
         {
