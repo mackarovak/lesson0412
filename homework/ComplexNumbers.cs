@@ -21,8 +21,8 @@ namespace homework
         public override string ToString()
         {
             if (i == 0) return $"{r}";
-            else if (i > 0) return $"{ r} +{ i}i";
-            else return $"{r}- {i}i";
+            else if (i > 0) return $"{ r}+{ i}i";
+            else return $"{r}{i}i";
         }
         public override int GetHashCode()
         {

@@ -33,7 +33,7 @@ namespace homework
                 Console.Write("По издательству ");
                 books = books.OrderBy(e => e.Publisher).ToArray();
             }
-            Console.WriteLine("отсортированныи массив");
+            Console.WriteLine("отсортированный массив");
             foreach (var item in books)
             {
                 Console.WriteLine("Название - {0}, автор - {1}, издательство - {2}", item.Name, item.Author, item.Publisher);

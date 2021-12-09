@@ -24,19 +24,19 @@ namespace homework
 			index = index1++;
 		}
 
-		internal Account(double balance)
+		public Account(double balance)
 		{
 			index = index1++;
 			this.balance = balance;
 		}
 
-		internal Account(Type accountType)
+		public Account(Type accountType)
 		{
 			index = index1++;
 			this.accountType = accountType;
 		}
 
-		internal Account(Type accountType, double balance) : this(accountType)
+		public Account(Type accountType, double balance) : this(accountType)
 		{
 			this.balance = balance;
 		}
